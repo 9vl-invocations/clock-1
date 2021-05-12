@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(90, 40%, 52%);
+}
+
+.clock {
+  font-size: 22px;
+  margin: 50px;
+}
+
+.clock-base {
+  font-size: inherit;
+  margin: 50px;
+  position: relative;
+  width: 450px;
+  background-color: #000050;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0.1em 0.1em 0.4em 0.1em hsla(95, 5%, 30%, 0.5);
+}
+
+.clock-base::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.clock-frame .clock-numbers {
+  font-size: inherit;
+}
+
+.inner-body {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -48.5% 0px 0px -48.5%;
+  width: 97.25%;
+  height: 97.25%;
+  border-radius: 50%;
+  background-color: gainsboro;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0.25em 0.25em 1em 0 rgba(0, 0, 0, 0.58);
+}
+
+.body-background {
+  position: absolute;
+  top: 5%;
+  height: 100%;
+  width: 100%;
+  z-index: 14;
+  opacity: 0.6;
+  background-image: url("/img/clock.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: content-box;
+  background-size: 70%;
+  transform-origin: 50% 100%;
+}
+
+.clock-hour-cursor {
+  position: absolute;
+  border-radius: 1em 2.5em 0 0;
+  z-index: 30;
+  height: 30%;
+  width: 2.5%;
+  background-color: #141414;
+  border: 5% solid white;
+  top: 20.5%;
+  left: 49%;
+  transform-origin: 50% 100%;
+  box-shadow: 0em 0em 0.3em 0.15em rgba(0, 0, 0, 0.3);
+}
+
+.clock-minute-cursor {
+  position: absolute;
+  border-radius: 1em 2.5em 0 0;
+  z-index: 40;
+  height: 37.5%;
+  width: 2%;
+  background-color: #141414;
+  border: 5% solid white;
+  top: 12.5%;
+  left: 49%;
+  transform-origin: 50% 100%;
+  box-shadow: 0em 0em 0.3em 0.15em rgba(0, 0, 0, 0.3);
+}
+
+.clock-seconds-cursor {
+  position: absolute;
+  z-index: 50;
+  border-radius: 2.5em;
+  height: 45%;
+  width: 1%;
+  background-color: #ff1717;
+  border: 5% solid white;
+  top: 12%;
+  left: 49.75%;
+  transform-origin: 50% 85%;
+  box-shadow: 0em 0em 0.3em 0.1em rgba(0, 0, 0, 0.3);
+}
+
+.clock-seconds-cursor__circle {
+  position: absolute;
+  top: 48.25%;
+  left: 48.25%;
+  width: 4%;
+  height: 4%;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 80;
+}
+
+.clock-seconds-cursor__screw {
+  position: absolute;
+  top: 49.25%;
+  left: 49.25%;
+  width: 2%;
+  height: 2%;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.clock-numbers > p {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.75em;
+  z-index: 15;
+  transform-origin: center center;
+  color: black;
+  transform-origin: center;
+  opacity: 0.85;
+}
+
+p.twelve {
+  position: absolute;
+  top: 2.75%;
+  left: 46%;
+}
+
+p.three {
+  position: absolute;
+  top: 44.5%;
+  left: 90%;
+}
+
+p.six {
+  position: absolute;
+  top: 88%;
+  left: 47.5%;
+}
+
+p.nine {
+  position: absolute;
+  top: 44.5%;
+  left: 5%;
+}
+
+.clock-seconds {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.clock-seconds::before,
+.clock-seconds::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 5px;
+  top: 88.88889px;
+  box-shadow: 0px 0px 0px 0.5px #000;
+}
+
+span.second {
+  width: 1%;
+  height: 3%;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  z-index: 15;
+}
+
+.second:nth-child(1) {
+  transform: rotate(30deg);
+}
+
+.second:nth-child(2) {
+  transform: rotate(60deg);
+}
+
+.second:nth-child(3) {
+  transform: rotate(18deg);
+}
+
+.clock-name {
+  position: relative;
+  transform-origin: 50% 50%;
+  top: 75px;
+  z-index: 15;
+  color: black;
+  opacity: 0.85;
+  font-variant: small-caps;
+}
